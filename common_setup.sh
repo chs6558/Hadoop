@@ -30,7 +30,7 @@ sudo echo JAVA_HOME=/usr/lib/jvm/$JAVAPATH/jre >> /etc/environment
 
 #step7 create hadoopuser
 sudo adduser hadoopuser --gecos ", , , ," --disabled-password
-sudo echo "hadoopuser:hadoopuser" | chpasswd
+echo 'hadoopuser:hadoopuser' | sudo chpasswd
 
 #step8 hadoopuser config
 sudo usermod -aG hadoopuser hadoopuser
