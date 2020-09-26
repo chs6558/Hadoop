@@ -21,12 +21,12 @@ sudo apt install -y $install_JAVA
 sudo wget https://downloads.apache.org/hadoop/common/$HADOOP/$HADOOP.tar.gz
 tar xzf $HADOOP.tar.gz
 mv $HADOOP hadoop
-sed -i 's/# export JAVA_HOME=/# export JAVA_HOME=\/usr\/lib\/jvm\/'$JAVAPATH'/g' ~/hadoop/etc/hadoop/hadoop-env.sh
+sed -i 's/# export JAVA_HOME=/export JAVA_HOME=\/usr\/lib\/jvm\/'$JAVAPATH'\//g' /hadoop/etc/hadoop/hadoop-env.sh
 sudo mv hadoop /usr/local/hadoop
 
 #step6
-sed -i 's;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/hadoop/bin:/usr/local/hadoop/sbin;' /etc/environment
-sudo echo JAVA_HOME=/usr/lib/jvm/$JAVAPATH/jre >> /etc/environment
+sudo sed -i 's;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/hadoop/bin:/usr/local/hadoop/sbin;' /etc/environment
+sudo /bin/su -c 'echo JAVA_HOME=\"/usr/lib/jvm/'$JAVAPATH'/jre\" >> /etc/environment'
 
 #step7 create hadoopuser
 sudo adduser hadoopuser --gecos ", , , ," --disabled-password
@@ -43,5 +43,4 @@ sudo ./read_setup_info.sh
 
 #step10 my host config
 sudo ./set_hostname.sh
-#step 11
-sudo reboot
+
