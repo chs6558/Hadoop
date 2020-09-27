@@ -6,6 +6,7 @@ HADOOP="hadoop-3.2.1"
 
 #step1
 sudo apt install -y ssh
+sudo apt-get install sshpass
 #step2
 sudo apt install -y pdsh
 echo "export PDSH_RCMD_TYPE=ssh" >> ~/.bashrc

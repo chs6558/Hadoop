@@ -9,7 +9,8 @@ while read line
 do
 	Parse=($line)
 	Name_info=${Parse[1]}
-	sudo su - hadoopuser -c "cat ~/.ssh/id_rsa.pub | ssh hadoopuser@$Name_info 'mkdir ~/.ssh; cat >> ~/.ssh/authorized_keys'"
+	#sudo su - hadoopuser -c "cat ~/.ssh/id_rsa.pub | ssh hadoopuser@$Name_info 'mkdir ~/.ssh; cat >> ~/.ssh/authorized_keys'"
+	sudo su - hadoopuser -c "sshpass -p hadoopuser ssh-copy-id hadoopuser@$Name_info"
 done < setup_info.txt
 
 #step13 core-site.xml edit
@@ -36,7 +37,10 @@ do
 		sudo su - hadoopuser -c "scp /usr/local/hadoop/etc/hadoop/* ${Parse[1]}:/usr/local/hadoop/etc/hadoop/"
 	fi
 done < setup_info.txt
-
-sudo su - hadoopuser -c "source /etc/environment"
-sudo su - hadoopuser -c "hdfs namenode -format"
-sudo su - hadoopuser -c "start-dfs.sh"
+#step 17
+sudo su - hadoopuser -c "touch ~/hadoop-start.sh"
+sudo su - hadoopuser -c "chmod 777 ~/hadoop-start.sh"
+sudo su - hadoopuser -c "echo 'source /etc/environment' >> ~/hadoop-start.sh" 
+sudo su - hadoopuser -c "echo 'hdfs namenode -format' >> ~/hadoop-start.sh"
+sudo su - hadoopuser -c "echo 'start-dfs.sh' >> ~/hadoop-start.sh"
+sudo su - hadoopuser
