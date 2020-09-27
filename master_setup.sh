@@ -1,6 +1,5 @@
 #!/bin/bash
 
-:<<'END'
 #step11 .bashrc edit
 sudo su - hadoopuser -c 'echo "export PDSH_RCMD_TYPE=ssh" >> ~/.bashrc'
 
@@ -44,7 +43,7 @@ sudo su - hadoopuser -c "chmod 777 ~/hadoop-start.sh"
 sudo su - hadoopuser -c "echo 'source /etc/environment' >> ~/hadoop-start.sh" 
 sudo su - hadoopuser -c "echo 'hdfs namenode -format' >> ~/hadoop-start.sh"
 sudo su - hadoopuser -c "echo 'start-dfs.sh' >> ~/hadoop-start.sh"
-END
+
 
 sudo su - hadoopuser -c 'echo "export HADOOP_HOME=/usr/local/hadoop">> ~/.bashrc'
 sudo su - hadoopuser -c 'echo "export HADOOP_COMMON_HOME=/usr/local/hadoop">> ~/.bashrc'
