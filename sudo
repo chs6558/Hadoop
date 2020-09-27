@@ -1,4 +1,0 @@
-hadoop-slave1 /usr/local/hadoop/etc/hadoop/workers
-hadoop-slave2 /usr/local/hadoop/etc/hadoop/workers
-hadoop-slave1 /usr/local/hadoop/etc/hadoop/workers
-hadoop-slave2 /usr/local/hadoop/etc/hadoop/workers
