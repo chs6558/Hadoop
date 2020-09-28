@@ -9,7 +9,6 @@ while read line
 do
 	Parse=($line)
 	Name_info=${Parse[1]}
-	#sudo su - hadoopuser -c "cat ~/.ssh/id_rsa.pub | ssh hadoopuser@$Name_info 'mkdir ~/.ssh; cat >> ~/.ssh/authorized_keys'"
 	sudo su - hadoopuser -c "sshpass -p hadoopuser ssh-copy-id hadoopuser@$Name_info"
 done < setup_info.txt
 
