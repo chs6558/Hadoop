@@ -1,3 +1,3 @@
-10.10.10.19 hadoop-master
-10.10.10.20 hadoop-slave1
-10.10.10.21 hadoop-slave2
+10.10.10.19 hadoop-main
+10.10.10.20 hadoop-sub1
+10.10.10.21 hadoop-sub2
