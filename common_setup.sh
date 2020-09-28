@@ -22,7 +22,7 @@ sudo apt install -y $install_JAVA
 sudo wget https://downloads.apache.org/hadoop/common/$HADOOP/$HADOOP.tar.gz
 tar xzf $HADOOP.tar.gz
 mv $HADOOP hadoop
-sed -i 's/# export JAVA_HOME=/export JAVA_HOME=\/usr\/lib\/jvm\/'$JAVAPATH'\//g' /hadoop/etc/hadoop/hadoop-env.sh
+sed -i 's/# export JAVA_HOME=/export JAVA_HOME=\/usr\/lib\/jvm\/'$JAVAPATH'\//g' hadoop/etc/hadoop/hadoop-env.sh
 sudo mv hadoop /usr/local/hadoop
 
 #step6
