@@ -9,7 +9,7 @@ while read line
 do
 	Parse=($line)
 	Name_info=${Parse[1]}
-	sudo su - hadoopuser -c "sshpass -p hadoopuser ssh-copy-id hadoopuser@$Name_info"
+	sudo su - hadoopuser -c "sshpass -p hadoopuser ssh-copy-id -o stricthostkeychecking=no hadoopuser@$Name_info"
 done < setup_info.txt
 
 #step13 core-site.xml edit
