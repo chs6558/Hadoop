@@ -4,7 +4,8 @@
 sudo su - hadoopuser -c 'echo "export PDSH_RCMD_TYPE=ssh" >> ~/.bashrc'
 
 #step12 key gen
-echo -e "\n" | sudo su - hadoopuser -c 'ssh-keygen -t rsa -P ""' 
+echo -e "\n" | sudo su - hadoopuser -c 'ssh-keygen -t rsa -P ""'
+sudo su -hadoopuser -c 'cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys'
 while read line
 do
 	Parse=($line)
