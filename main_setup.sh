@@ -47,6 +47,6 @@ sudo su - hadoopuser -c 'echo "export HADOOP_COMMON_HOME=/usr/local/hadoop">> ~/
 sudo su - hadoopuser -c 'echo "export HADOOP_CONF_DIR=/usr/local/hadoop/etc/hadoop">> ~/.bashrc'
 sudo su - hadoopuser -c 'echo "export HADOOP_HDFS_HOME=/usr/local/hadoop">> ~/.bashrc'
 sudo su - hadoopuser -c 'echo "export HADOOP_MAPRED_HOME=/usr/local/hadoop">> ~/.bashrc'
-sudo su - hadoopuser -c 'echo "export HADOOP_YARN=/usr/local/hadoop">> ~/.bashrc'
+sudo su - hadoopuser -c 'echo "export HADOOP_YARN_HOME=/usr/local/hadoop">> ~/.bashrc'
 
 sudo su - hadoopuser
