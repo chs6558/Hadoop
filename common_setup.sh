@@ -45,3 +45,5 @@ sudo ./read_setup_info.sh
 #step10 my host config
 sudo ./set_hostname.sh
 
+#step11 .bashrc edit
+sudo su - hadoopuser -c 'echo "export PDSH_RCMD_TYPE=ssh" >> ~/.bashrc'
