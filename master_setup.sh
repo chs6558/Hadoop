@@ -13,7 +13,7 @@ do
 done < setup_info.txt
 
 #step13 core-site.xml edit
-sudo sed -i "19 a <property><name>fs.defaultFS</name><value>hdfs://hadoop-master:9000</value></property>" /usr/local/hadoop/etc/hadoop/core-site.xml
+sudo sed -i "19 a <property><name>fs.defaultFS</name><value>hdfs://hadoop-main:9000</value></property>" /usr/local/hadoop/etc/hadoop/core-site.xml
 #step14 hdfs-site.xml edit
 sudo sed -i "19 a <property><name>dfs.namenode.name.dir</name><value>/usr/local/hadoop/data/nameNode</value></property><property><name>dfs.datanode.data.dir</name><value>/usr/local/hadoop/data/dataNoe></value></property><property><name>dfs.replication</name><value>2</value></property>" /usr/local/hadoop/etc/hadoop/hdfs-site.xml
 #step15 worker edit
