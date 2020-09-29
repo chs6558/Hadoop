@@ -22,7 +22,7 @@ sudo sed -i '1d' /usr/local/hadoop/etc/hadoop/workers
 while read line
 do
 	Parse=($line)
-	if [ ${Parse[1]} != "hadoop-master" ] ; then
+	if [ ${Parse[1]} != "hadoop-main" ] ; then
 		sudo /bin/su -c "echo ${Parse[1]} >>  /usr/local/hadoop/etc/hadoop/workers"
 	fi
 done < setup_info.txt
@@ -31,7 +31,7 @@ done < setup_info.txt
 while read line
 do
 	Parse=($line)
-	if [ ${Parse[1]} != "hadoop-master" ] ; then
+	if [ ${Parse[1]} != "hadoop-main" ] ; then
 		echo ${Parse[1]}
 		sudo su - hadoopuser -c "scp /usr/local/hadoop/etc/hadoop/* ${Parse[1]}:/usr/local/hadoop/etc/hadoop/"
 	fi
